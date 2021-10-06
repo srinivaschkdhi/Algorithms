@@ -34,7 +34,7 @@ public class BucketSort {
     }
   }
   
-  public int[] sort(int[] arr) {
+  public int[] sort2(int[] arr) {
         ArrayList<Integer>[] buckets = new ArrayList[arr.length];
 
         for (int i = 0; i < arr.length; i++)
