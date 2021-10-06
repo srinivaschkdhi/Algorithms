@@ -32,4 +32,23 @@ public class CountingSort {
             arr[i] = output[i];
         }
     }
+    
+    public int[] sort2(int[] arr) {
+        int[] output = new int[arr.length];
+
+        int[] count = new int[256];
+        for (int n : arr) {
+            count[n]++;
+        }
+
+        for (int i = 1; i < 256; i++)
+            count[i] += count[i - 1];
+
+        for (int n : arr) {
+            output[count[n] - 1] = n;
+            count[n]--;
+        }
+
+        return output;
+    }
 }
